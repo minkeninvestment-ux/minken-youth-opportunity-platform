@@ -1,0 +1,10 @@
+[project]
+name = "minken-youth-opportunity-platform"
+version = "0.1.0"
+description = "Open-source AI/Data Science prototype for youth opportunity discovery"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "MINKEN INVESTMENT LTD (Minken Africa)"}]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
