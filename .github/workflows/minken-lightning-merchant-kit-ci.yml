@@ -1,0 +1,23 @@
+name: Minken Lightning Merchant Kit tests
+on:
+  push:
+    paths:
+      - 'projects/minken-lightning-merchant-kit/**'
+      - '.github/workflows/minken-lightning-merchant-kit-ci.yml'
+  pull_request:
+    paths:
+      - 'projects/minken-lightning-merchant-kit/**'
+      - '.github/workflows/minken-lightning-merchant-kit-ci.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/minken-lightning-merchant-kit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm test
