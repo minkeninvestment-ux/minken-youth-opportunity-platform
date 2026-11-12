@@ -13,6 +13,12 @@ This repository folder contains a small, accessible, browser-based prototype to 
 
 **No registration, API key or patient information is required.** All service-provider labels are synthetic and no clinical provider is verified or connected.
 
+## Prototype demonstration video
+
+[**Watch / download the MinkenCare Connect UNICEF pitch demo (MP4, 53 seconds)**](./MinkenCare_Connect_UNICEF_Pitch_Demo.mp4)
+
+**Important:** This silent video demonstrates an early-stage, browser-only interface with fictional service entries, local reminders and draft-only referral workflows. It does **not** include footage of Minken team members speaking, real healthcare integrations, clinical validation or user testing results. It is **not** the complete UNICEF application pitch video; UNICEF also requires real team members to speak and show the solution in action. This video is provided for technical review only.
+
 ## Demonstrated functionality
 
 - Responsive mobile-first interface with English and Kiswahili text.
