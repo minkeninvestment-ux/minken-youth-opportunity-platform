@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MinkenCare Connect early-stage FemTech interface demonstration by Minken Africa.">
+  <title>MinkenCare Connect | Prototype</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice" role="status"><strong>PROTOTYPE ONLY</strong><span data-i18n="notice"> • Demo entries, no clinical integrations, no live referrals or diagnosis.</span></div>
+  <header class="site-header">
+    <a class="brand" href="#main" aria-label="MinkenCare Connect home"><span class="brandmark">M<span>+</span></span><span><strong>MinkenCare</strong><small>CONNECT • MINKEN AFRICA</small></span></a>
+    <div class="top-actions"><label for="language" data-i18n="languageLabel">Language</label><select id="language" aria-label="Choose language"><option value="en">English</option><option value="sw">Kiswahili</option></select></div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="eyebrow">EARLY-STAGE FEMTECH DEMO</span>
+        <h1 data-i18n="heroTitle">Health access should feel clear, supportive and connected.</h1>
+        <p data-i18n="heroIntro">Explore a concept for multilingual information, local service discovery, reminders and referral coordination designed with underserved women and girls in mind.</p>
+        <div class="hero-actions"><a class="btn primary" href="#services" data-i18n="explore">Explore service discovery</a><a class="btn outline" href="#support" data-i18n="help">Try guided support</a></div>
+      </div>
+      <aside class="hero-aside" aria-label="Demonstration capabilities">
+        <div class="pulse">✦</div><h2 data-i18n="whatDemo">What this demo can do</h2>
+        <ul><li data-i18n="cap1">Show synthetic service options by county</li><li data-i18n="cap2">Save a reminder in this browser</li><li data-i18n="cap3">Prepare a draft referral reference</li><li data-i18n="cap4">Explain the concept in two languages</li></ul>
+      </aside>
+    </section>
+    <div class="safety" role="note"><span aria-hidden="true">⚕</span><p data-i18n="safety">This is not a medical service. No diagnosis, clinical advice, real appointments or urgent help are provided. For medical concerns, contact a qualified local healthcare professional; for emergencies seek urgent local assistance.</p></div>
+    <section class="section" id="services">
+      <div class="section-head"><span class="eyebrow" data-i18n="serviceEyebrow">01 / FIND SUPPORT</span><h2 data-i18n="serviceTitle">Explore care access by county</h2><p data-i18n="serviceIntro">Choose a county to see synthetic demonstration entries. These are not verified hospitals or service listings.</p></div>
+      <div class="panel">
+        <label for="county" data-i18n="countyLabel">Select county</label>
+        <div class="inline-form"><select id="county"><option value="Nairobi">Nairobi</option><option value="Garissa">Garissa</option><option value="Wajir">Wajir</option><option value="Mandera">Mandera</option></select><button class="btn primary" type="button" id="find-services" data-i18n="findButton">Show demo options</button></div>
+        <div id="service-result" class="result" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="section grid-two" id="tools">
+      <article class="panel"><span class="eyebrow" data-i18n="reminderEyebrow">02 / STAY ORGANISED</span><h2 data-i18n="reminderTitle">Create a local reminder</h2><p data-i18n="reminderIntro">For demonstration only. No actual booking or SMS is created.</p>
+        <label for="reminder-type" data-i18n="reminderType">Reminder type</label><select id="reminder-type"><option value="checkin" data-i18n="type1">General health check-in</option><option value="followup" data-i18n="type2">Follow-up discussion</option><option value="appointment" data-i18n="type3">Planned appointment</option></select>
+        <label for="reminder-date" data-i18n="reminderDate">Date</label><input type="date" id="reminder-date">
+        <div class="button-row"><button type="button" class="btn primary" id="save-reminder" data-i18n="save">Save on this device</button><button type="button" class="btn subtle" id="clear-reminder" data-i18n="clear">Clear</button></div>
+        <div class="result" id="reminder-result" aria-live="polite"></div>
+      </article>
+      <article class="panel"><span class="eyebrow" data-i18n="referralEyebrow">03 / COORDINATE</span><h2 data-i18n="referralTitle">Prepare a demo referral</h2><p data-i18n="referralIntro">Create a draft reference for illustration. It will not reach a clinic or care provider.</p>
+        <label for="referral-county" data-i18n="referralCounty">County for draft</label><select id="referral-county"><option value="Nairobi">Nairobi</option><option value="Garissa">Garissa</option><option value="Wajir">Wajir</option><option value="Mandera">Mandera</option></select>
+        <label for="referral-topic" data-i18n="referralTopic">Service category</label><select id="referral-topic"><option value="general" data-i18n="general">General information</option><option value="maternal" data-i18n="maternal">Maternal health services</option><option value="adolescent" data-i18n="adolescent">Adolescent-friendly information</option></select>
+        <div class="button-row"><button type="button" class="btn primary" id="create-referral" data-i18n="createDraft">Create draft reference</button></div><div class="result" id="referral-result" aria-live="polite"></div>
+      </article>
+    </section>
+    <section class="section" id="support"><div class="section-head"><span class="eyebrow" data-i18n="guideEyebrow">04 / GUIDED INFORMATION</span><h2 data-i18n="guideTitle">Ask about how this service works</h2><p data-i18n="guideIntro">This is a rule-based demonstration, not an AI assistant or medical triage system. Avoid entering personal health details.</p></div>
+      <div class="panel"><label for="question" data-i18n="askLabel">Your question</label><div class="inline-form"><input id="question" type="text" maxlength="160" autocomplete="off" placeholder="How do referrals work?"><button type="button" id="ask" class="btn primary" data-i18n="askButton">Show guidance</button></div><div id="answer" class="result" aria-live="polite"></div></div>
+    </section>
+    <section class="roadmap"><span class="eyebrow" data-i18n="roadmapTag">DEVELOPMENT ROADMAP</span><h2 data-i18n="roadmapTitle">What comes next</h2><div class="roadmap-cards"><div><strong>01</strong><p data-i18n="road1">Clinical partner engagement and co-design</p></div><div><strong>02</strong><p data-i18n="road2">Secure backend and qualified review of content</p></div><div><strong>03</strong><p data-i18n="road3">Supervised usability and safety testing</p></div><div><strong>04</strong><p data-i18n="road4">Evidence-based pilot and evaluation</p></div></div></section>
+  </main>
+  <footer><p><strong>Minken Investment Ltd</strong> · Minken Africa · Nairobi, Kenya</p><p data-i18n="footer">An open-source demonstration. No real service is offered through this page.</p></footer>
+</body>
+</html>
